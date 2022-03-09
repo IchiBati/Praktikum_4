@@ -16,5 +16,10 @@ public class AbstractThing extends AbstractGameElement{
         this.isVisible = isVisible;
     }
 
-
+    @Override
+    public String toString() {
+        return "AbstractThing{" +
+                "isVisible=" + isVisible +
+                "} " + super.toString();
+    }
 }

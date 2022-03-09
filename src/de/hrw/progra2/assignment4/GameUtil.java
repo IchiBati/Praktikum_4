@@ -27,4 +27,5 @@ public class GameUtil {
     public static double getMonthlyProfit(World world) {
         // TODO: Implement
     }
+
 }

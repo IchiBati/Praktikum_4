@@ -41,7 +41,7 @@ public class AbstractBeing extends  AbstractGameElement{
         }
     }
 
-    public long deductEnergy(long energy){
+    public void deductEnergy(long energy){
         this.currentEnergy -= energy;
         if (this.currentEnergy < 0){
             this.currentEnergy = 0;
@@ -52,4 +52,11 @@ public class AbstractBeing extends  AbstractGameElement{
         this.addEnergy(object.getEaten());
     }
 
+    @Override
+    public String toString() {
+        return "AbstractBeing{" +
+                "maxEnergy=" + maxEnergy +
+                ", currentEnergy=" + currentEnergy +
+                "} " + super.toString();
+    }
 }
