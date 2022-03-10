@@ -19,7 +19,9 @@ public class Fruit extends AbstractThing implements CanBeEaten, CanBeCarriedInIn
     @Override
     public long getEaten(){
         if (this.isVisible()){
+            this.setVisible(false);
             return calories;
+
         }
         return 0;
     }
