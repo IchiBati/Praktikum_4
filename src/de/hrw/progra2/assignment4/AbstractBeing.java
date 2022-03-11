@@ -30,6 +30,7 @@ public class AbstractBeing extends  AbstractGameElement{
         return this.getCurrentEnergy() > 0;
     }
 
+
     public void revive(){
         currentEnergy = maxEnergy;
     }
@@ -45,6 +46,7 @@ public class AbstractBeing extends  AbstractGameElement{
         this.currentEnergy -= energy;
         if (this.currentEnergy < 0){
             this.currentEnergy = 0;
+
         }
     }
 

@@ -2,9 +2,13 @@ package de.hrw.progra2.assignment4;
 
 import java.util.Arrays;
 
-public class PayingCustomerPlayer extends AbstractHumanParticipant{
+public class PayingCustomerPlayer extends AbstractHumanParticipant {
     private double amountSpentPerMonth;
     private CanBeCarriedInInventory[] thingsWhichCanCarriedInInventory;
+
+    public PayingCustomerPlayer(String name, Vector3D position, long maxEnergy, long currentEnergy, String loginName) {
+        super(name, position, maxEnergy, currentEnergy, loginName);
+    }
 
     public double getAmountSpentPerMonth() {
         return amountSpentPerMonth;
@@ -24,6 +28,11 @@ public class PayingCustomerPlayer extends AbstractHumanParticipant{
 
     @Override
     public void deductEnergy(long energy) {
-        // TODO IMPLEMENT OVERRIDE OF deductEnergy IN PAYINGCUSTOMER CLASS
+        super.deductEnergy(energy);
+        if (!isLiving()) {
+            setPosition(new Vector3D());
+            revive();
+        }
+
     }
 }
